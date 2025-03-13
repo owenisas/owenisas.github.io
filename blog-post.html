@@ -1,0 +1,562 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Blog Post - Simple Demo</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <link href="./css/vendors/aos.css" rel="stylesheet">
+    <link href="./style.css" rel="stylesheet">
+</head>
+
+<body class="font-inter antialiased bg-white text-gray-900 tracking-tight">
+
+    <!-- Page wrapper -->
+    <div class="flex flex-col min-h-screen overflow-hidden supports-[overflow:clip]:overflow-clip">
+
+        <!-- Site header -->
+        <header class="fixed w-full z-30 md:bg-opacity-90 transition duration-300 ease-in-out" x-data="handleHeader" @scroll.window="isTop" :class="{ 'bg-white backdrop-blur-sm shadow-lg' : !top }">
+            <script>
+                document.addEventListener('alpine:init', () => {
+                    Alpine.data('handleHeader', () => ({
+                        top: true,
+                        isTop() {
+                            this.top = window.pageYOffset < 10
+                        },
+                        init() {
+                            this.isTop()
+                        }
+                    }))
+                })        
+            </script>  
+            <div class="max-w-6xl mx-auto px-5 sm:px-6">
+                <div class="flex items-center justify-between h-16 md:h-20">
+
+                    <!-- Site branding -->
+                    <div class="shrink-0 mr-4">
+                        <!-- Logo -->
+                        <a class="block" href="index.html" aria-label="Cruip">
+                            <svg class="w-8 h-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                <defs>
+                                    <radialGradient cx="21.152%" cy="86.063%" fx="21.152%" fy="86.063%" r="79.941%" id="header-logo">
+                                        <stop stop-color="#4FD1C5" offset="0%" />
+                                        <stop stop-color="#81E6D9" offset="25.871%" />
+                                        <stop stop-color="#338CF5" offset="100%" />
+                                    </radialGradient>
+                                </defs>
+                                <rect width="32" height="32" rx="16" fill="url(#header-logo)" fill-rule="nonzero" />
+                            </svg>
+                        </a>
+                    </div>
+
+                    <!-- Desktop navigation -->
+                    <nav class="hidden md:flex md:grow">
+
+                        <!-- Desktop menu links -->
+                        <ul class="flex grow justify-end flex-wrap items-center">
+                            <li>
+                                <a class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="pricing.html">Pricing</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="about.html">About us</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="tutorials.html">Tutorials</a>
+                            </li>
+                            <li>
+                                <a class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="blog.html">Blog</a>
+                            </li>
+                            <!-- 1st level: hover -->
+                            <li
+                                class="relative"
+                                x-data="{ open: false }"
+                                @mouseenter="open = true"
+                                @mouseleave="open = false"
+                            >
+                                <a
+                                    class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
+                                    href="#0"
+                                    aria-haspopup="true"
+                                    :aria-expanded="open"
+                                    @focus="open = true"
+                                    @focusout="open = false"
+                                    @click.prevent
+                                >
+                                    Resources
+                                    <svg class="w-3 h-3 fill-current text-gray-400 cursor-pointer ml-1 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
+                                    </svg>
+                                </a>
+                                <!-- 2nd level: hover -->
+                                <ul
+                                    class="origin-top-right absolute top-full right-0 w-40 bg-white py-2 ml-4 rounded shadow-lg"
+                                    x-show="open"
+                                    x-transition:enter="transition ease-out duration-200 transform"
+                                    x-transition:enter-start="opacity-0 -translate-y-2"
+                                    x-transition:enter-end="opacity-100 translate-y-0"
+                                    x-transition:leave="transition ease-out duration-200"
+                                    x-transition:leave-start="opacity-100"
+                                    x-transition:leave-end="opacity-0"
+                                    x-cloak
+                                >
+                                    <li>
+                                        <a class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight" href="documentation.html" @focus="open = true" @focusout="open = false">Documentation</a>
+                                    </li>
+                                    <li>
+                                        <a class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight" href="support.html" @focus="open = true" @focusout="open = false">Support center</a>
+                                    </li>
+                                    <li>
+                                        <a class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight" href="404.html" @focus="open = true" @focusout="open = false">404</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <!-- Desktop sign in links -->
+                        <ul class="flex grow justify-end flex-wrap items-center">
+                            <li>
+                                <a class="font-medium text-gray-600 hover:text-gray-900 px-5 py-3 flex items-center transition duration-150 ease-in-out" href="signin.html">Sign in</a>
+                            </li>
+                            <li>
+                                <a class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 ml-3" href="signup.html">
+                                    <span>Sign up</span>
+                                    <svg class="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill-rule="nonzero" />
+                                    </svg>
+                                </a>
+                            </li>
+                        </ul>
+
+                    </nav>
+                    
+                    <!-- Mobile menu -->
+                    <div class="flex md:hidden" x-data="{ expanded: false }">
+
+                        <!-- Hamburger button -->
+                        <button
+                            class="hamburger"
+                            :class="{ 'active': expanded }"
+                            @click.stop="expanded = !expanded"
+                            aria-controls="mobile-nav"
+                            :aria-expanded="expanded"
+                        >
+                            <span class="sr-only">Menu</span>
+                            <svg class="w-6 h-6 fill-current text-gray-900" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <rect y="4" width="24" height="2" />
+                                <rect y="11" width="24" height="2" />
+                                <rect y="18" width="24" height="2" />
+                            </svg>
+                        </button>
+
+                        <!-- Mobile navigation -->
+                        <nav
+                            id="mobile-nav"
+                            class="absolute top-full h-screen pb-16 z-20 left-0 w-full overflow-scroll bg-white"
+                            @click.outside="expanded = false"
+                            @keydown.escape.window="expanded = false"
+                            x-show="expanded"
+                            x-transition:enter="transition ease-out duration-200 transform"
+                            x-transition:enter-start="opacity-0 -translate-y-2"
+                            x-transition:enter-end="opacity-100 translate-y-0"
+                            x-transition:leave="transition ease-out duration-200"
+                            x-transition:leave-start="opacity-100"
+                            x-transition:leave-end="opacity-0"                    
+                            x-cloak
+                        >
+                            <ul class="px-5 py-2">
+                                <li>
+                                    <a class="flex text-gray-600 hover:text-gray-900 py-2" href="pricing.html">Pricing</a>
+                                </li>
+                                <li>
+                                    <a class="flex text-gray-600 hover:text-gray-900 py-2" href="about.html">About us</a>
+                                </li>
+                                <li>
+                                    <a class="flex text-gray-600 hover:text-gray-900 py-2" href="tutorials.html">Tutorials</a>
+                                </li>
+                                <li>
+                                    <a class="flex text-gray-600 hover:text-gray-900 py-2" href="blog.html">Blog</a>
+                                </li>
+                                <li class="py-2 my-2 border-t border-b border-gray-200">
+                                    <span class="flex text-gray-600 hover:text-gray-900 py-2">Resources</span>
+                                    <ul class="pl-4">
+                                        <li>
+                                            <a class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2" href="documentation.html">Documentation</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2" href="support.html">Support center</a>
+                                        </li>
+                                        <li>
+                                            <a class="text-sm flex font-medium text-gray-600 hover:text-gray-900 py-2" href="404.html">404</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a class="flex font-medium w-full text-gray-600 hover:text-gray-900 py-2 justify-center" href="signin.html">Sign in</a>
+                                </li>
+                                <li>
+                                    <a class="btn-sm text-gray-200 bg-gray-900 hover:bg-gray-800 w-full my-2" href="signup.html">
+                                        <span>Sign up</span>
+                                        <svg class="w-3 h-3 fill-current text-gray-400 shrink-0 ml-2 -mr-1" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                            <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill="#999" fill-rule="nonzero" />
+                                        </svg>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+
+                </div>
+            </div>
+        </header>
+
+        <!-- Page content -->
+        <main class="grow">
+            
+            <!-- Blog post -->
+            <section>
+                <div class="max-w-6xl mx-auto px-4 sm:px-6">
+                    <div class="pt-32 pb-12 md:pt-40 md:pb-20">
+                        <div class="max-w-3xl mx-auto lg:max-w-none">
+
+                            <article>
+
+                                <!-- Article header -->
+                                <header class="max-w-3xl mx-auto mb-20">
+                                    <!-- Title -->
+                                    <h1 class="h1 text-center mb-4">Why we think Simple is good for developers</h1>
+                                </header>
+
+                                <!-- Article content -->
+                                <div class="lg:flex lg:justify-between">
+
+                                    <!-- Sidebar -->
+                                    <aside class="relative hidden lg:block w-64 mr-20 shrink-0">
+                                        <div class="sticky top-28">
+                                            <h4 class="text-lg font-bold leading-snug tracking-tight mb-4">Table of contents</h4>
+                                            <ul class="font-medium -my-1">
+                                                <li class="py-1">
+                                                    <a class="flex items-center hover:underline" href="#introduction">
+                                                        <svg class="w-4 h-4 fill-current text-gray-400 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
+                                                        </svg>
+                                                        <span>Introduction</span>
+                                                    </a>
+                                                </li>
+                                                <li class="py-1">
+                                                    <a class="flex items-center hover:underline" href="#general">
+                                                        <svg class="w-4 h-4 fill-current text-gray-400 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
+                                                        </svg>
+                                                        <span>General content</span>
+                                                    </a>
+                                                </li>
+                                                <li class="py-1">
+                                                    <a class="flex items-center hover:underline" href="#additional">
+                                                        <svg class="w-4 h-4 fill-current text-gray-400 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
+                                                        </svg>
+                                                        <span>Additional reading</span>
+                                                    </a>
+                                                </li>
+                                                <li class="py-1">
+                                                    <a class="flex items-center hover:underline" href="#conclusion">
+                                                        <svg class="w-4 h-4 fill-current text-gray-400 mr-3 shrink-0" viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M7.3 8.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM7.3 14.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0zM.3 9.7c-.4-.4-.4-1 0-1.4l7-7c.4-.4 1-.4 1.4 0 .4.4.4 1 0 1.4l-7 7c-.4.4-1 .4-1.4 0z" />
+                                                        </svg>
+                                                        <span>Conclusion</span>
+                                                    </a>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </aside>
+
+                                    <!-- Main content -->
+                                    <div>
+
+                                        <!-- Article meta -->
+                                        <div class="flex items-center mb-6">
+                                            <div class="flex shrink-0 mr-3">
+                                                <a class="relative" href="#0">
+                                                    <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
+                                                    <img class="relative rounded-full" src="./images/news-author-04.jpg" width="32" height="32" alt="Author 04" />
+                                                </a>
+                                            </div>
+                                            <div>
+                                                <span class="text-gray-600">By </span>
+                                                <a class="font-medium hover:underline" href="#0">Micheal Osman</a>
+                                                <span class="text-gray-600"> · July 17, 2020</span>
+                                            </div>
+                                        </div>
+                                        <hr class="w-16 h-px pt-px bg-gray-200 border-0 mb-6" />
+
+                                        <!-- Article body -->
+                                        <div class="text-lg text-gray-600">
+                                            <p id="introduction" class="mb-8" style="scroll-margin-top: 100px;">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis enim lobortis scelerisque fermentum. Neque sodales ut etiam sit amet <a class="text-gray-900 underline" href="#0">how to manage anything</a> malesuada proin libero nunc consequat interdum varius. Quam pellentesque nec nam aliquam sem <strong class="font-medium text-gray-900">et tortor consequat</strong>. Pellentesque adipiscing commodo elit at imperdiet. Semper auctor neque vitae tempus quam pellentesque nec. Amet dictum sit amet justo donec enim diam. <strong class="font-medium text-gray-900">Varius sit amet mattis vulputate enim</strong> nulla aliquet porttitor. Odio pellentesque diam volutpat commodo sed. Elit sed vulputate mi sit amet mauris commodo quis imperdiet.
+                                            </p>
+                                            <p class="mb-8">
+                                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                                            </p>
+                                            <figure class="mb-8">
+                                                <img class="w-full rounded" src="./images/news-single.jpg" width="768" height="432" alt="Blog single" />
+                                            </figure>
+                                            <h3 id="general" class="h3 text-gray-900 mb-4" style="scroll-margin-top: 100px;">General content</h3>
+                                            <p class="mb-8">
+                                                Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat auctor urna nunc id cursus metus aliquam eleifend, arcu dictum varius duis at consectetur lorem donec massa sapien, sed risus ultricies tristique nulla aliquet. Morbi tristique senectus et netus et, nibh nisl condimentum id venenatis a condimentum vitae sapien.
+                                            </p>
+                                            <p class="mb-8">
+                                                Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat auctor urna nunc id cursus metus aliquam eleifend:
+                                            </p>
+                                            <ul class="list-disc list-inside mb-8">
+                                                <li class="mb-1"><strong class="font-medium text-gray-900">E-commerce</strong>: Better lorem ipsum generator.</li>
+                                                <li class="mb-1"><strong class="font-medium text-gray-900">Booking</strong>: Lorem ipsum post generator.</li>
+                                                <li class="mb-1"><strong class="font-medium text-gray-900">Retail</strong>: Generic dummy blog post generator.</li>
+                                                <li class="mb-1"><strong class="font-medium text-gray-900">On-demand services</strong>: Lorem ipsum generator shortcode.</li>
+                                            </ul>
+                                            <p class="mb-8">
+                                                Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat auctor urna nunc id cursus metus aliquam eleifend:
+                                            </p>
+                                            <p class="mb-8">
+                                                <a class="inline-flex items-center text-base text-blue-600 font-medium hover:underline" href="#0">
+                                                    <span>Read Simple on-demand services</span>
+                                                    <svg class="w-3 h-3 fill-current text-blue-400 shrink-0 ml-2" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                                        <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" />
+                                                    </svg>
+                                                </a>
+                                            </p>
+                                            <p class="mb-8">
+                                                Aenean sed adipiscing <em class="italic">diam donec adipiscing tristique risus nec feugiat</em> auctor urna nunc id cursus metus aliquam eleifend, arcu dictum varius duis at consectetur lorem donec massa sapien, sed risus ultricies tristique nulla aliquet.
+                                            </p>
+                                            <h4 class="h4 text-gray-900 mb-4">Why support for Business is important</h4>
+                                            <p class="mb-8">
+                                                Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat auctor urna nunc id cursus metus aliquam eleifend.
+                                            </p>
+                                            <blockquote class="italic text-gray-900 font-medium mb-8">
+                                                “ Mi in nulla posuere sollicitudin. Porttitor eget dolor morbi non arcu risus quis varius quam. Pharetra vel turpis nunc eget lorem dolor sed viverra. Semper auctor neque vitae tempus quam pellentesque nec. “
+                                            </blockquote>
+                                            <p class="mb-8">
+                                                Et leo duis ut diam quam nulla porttitor porttitor lacus luctus accumsan tortor, lorem dolor sed viverra ipsum nunc aliquet bibendum enim eu augue ut lectus arcu bibendum at. Non sodales neque sodales ut etiam sit. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam.
+                                            </p>
+                                            <p class="p-4 bg-gray-100 border border-gray-300 rounded mb-8">
+                                                <a class="text-gray-900 underline" href="#0">Simple</a> is a sed viverra ipsum nunc aliquet bibendum enim eu augue ut lectus arcu bibendum at. Non sodales neque sodales ut etiam sit. Venenatis urna cursus eget nunc scelerisque viverra mauris in aliquam. Learn more <a class="text-gray-900 underline" href="#0">here</a>.
+                                            </p>
+                                            <h3 id="additional" class="h3 text-gray-900 mb-4" style="scroll-margin-top: 100px;">Additional reading</h3>
+                                            <p class="mb-8">Aenean sed adipiscing diam donec adipiscing tristique risus nec feugiat auctor urna nunc id cursus metus aliquam eleifend:</p>
+                                            <p class="mb-8"><strong class="font-medium text-gray-900">Mi in nulla posuere sollicitudin:</strong></p>
+                                            <ul class="list-disc list-inside mb-8">
+                                                <li class="mb-1">
+                                                    <a class="text-gray-900 underline" href="#0">E-commerce for etter lorem ipsum generator</a>
+                                                </li>
+                                                <li class="mb-1">
+                                                    <a class="text-gray-900 underline" href="#0">Booking for lorem ipsum post generator</a>
+                                                </li>
+                                                <li class="mb-1">
+                                                    <a class="text-gray-900 underline" href="#0">Retail for generic dummy blog post generator</a>
+                                                </li>
+                                                <li class="mb-1">
+                                                    <a class="text-gray-900 underline" href="#0">On-demand services: Lorem ipsum generator shortcode</a>
+                                                </li>
+                                            </ul>
+                                            <h3 id="conclusion" class="h3 text-gray-900 mb-4" style="scroll-margin-top: 100px;">Conclusion</h3>
+                                            <p>
+                                                Sollicitudin ac orci phasellus egestas tellus rutrum telluse nim ut tellus elementum sagittis vitae et leo duis egestas purus viverra accumsan in nisl nisi scelerisquep ellentesque habitant morbi tristique, senectus et netus et dolor purus non enim praesent elementum facilisis leol, aoreet suspendisse interdum consectetur libero id faucibus.
+                                            </p>
+
+                                            <div>
+                                                <hr class="w-full h-px pt-px mt-8 bg-gray-200 border-0" />
+                                                <div class="mt-8">
+                                                    Interested in more tips like this? Check out <a class="text-gray-900 underline" href="#0">Introducing the Testing Field Guide</a>.
+                                                </div>
+                                                <div class="mt-6">
+                                                    <a class="inline-flex items-center text-base text-blue-600 font-medium hover:underline" href="blog.html">
+                                                        <svg class="w-3 h-3 fill-current text-blue-400 shrink-0 mr-2" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                                            <path d="M.293 5.282L5 .5l1.414 1.436-3 3.048H12v2.032H3.414l3 3.048L5 11.5.293 6.718a1.027 1.027 0 010-1.436z" />
+                                                        </svg>
+                                                        <span>Back to the blog</span>
+                                                    </a>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                    </div>
+
+                                </div>
+
+                                <!-- Article footer -->
+                            </article>
+
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+        </main>
+
+        <!-- Site footer -->
+        <footer>
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+
+                <!-- Top area: Blocks -->
+                <div class="grid sm:grid-cols-12 gap-8 py-8 md:py-12 border-t border-gray-200">
+
+                    <!-- 1st block -->
+                    <div class="sm:col-span-12 lg:col-span-3">
+                        <div class="mb-2">
+                            <!-- Logo -->
+                            <a class="inline-block" href="index.html" aria-label="Cruip">
+                                <svg class="w-8 h-8" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <defs>
+                                        <radialGradient cx="21.152%" cy="86.063%" fx="21.152%" fy="86.063%" r="79.941%" id="footer-logo">
+                                            <stop stop-color="#4FD1C5" offset="0%" />
+                                            <stop stop-color="#81E6D9" offset="25.871%" />
+                                            <stop stop-color="#338CF5" offset="100%" />
+                                        </radialGradient>
+                                    </defs>
+                                    <rect width="32" height="32" rx="16" fill="url(#footer-logo)" fill-rule="nonzero" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="text-sm text-gray-600">
+                            <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Terms</a> · <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Privacy Policy</a>
+                        </div>
+                    </div>
+
+                    <!-- 2nd block -->
+                    <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
+                        <h6 class="text-gray-800 font-medium mb-2">Products</h6>
+                        <ul class="text-sm">
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Web Studio</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">DynamicBox Flex</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Programming Forms</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Integrations</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Command-line</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 3rd block -->
+                    <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
+                        <h6 class="text-gray-800 font-medium mb-2">Resources</h6>
+                        <ul class="text-sm">
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Documentation</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Tutorials & Guides</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Blog</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Support Center</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Partners</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 4th block -->
+                    <div class="sm:col-span-6 md:col-span-3 lg:col-span-2">
+                        <h6 class="text-gray-800 font-medium mb-2">Company</h6>
+                        <ul class="text-sm">
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Home</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">About us</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Company values</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Pricing</a>
+                            </li>
+                            <li class="mb-2">
+                                <a class="text-gray-600 hover:text-gray-900 transition duration-150 ease-in-out" href="#0">Privacy Policy</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <!-- 5th block -->
+                    <div class="sm:col-span-6 md:col-span-3 lg:col-span-3">
+                        <h6 class="text-gray-800 font-medium mb-2">Subscribe</h6>
+                        <p class="text-sm text-gray-600 mb-4">Get the latest news and articles to your inbox every month.</p>
+                        <form>
+                            <div class="flex flex-wrap mb-4">
+                                <div class="w-full">
+                                    <label class="block text-sm sr-only" for="newsletter">Email</label>
+                                    <div class="relative flex items-center max-w-xs">
+                                        <input id="newsletter" type="email" class="form-input w-full text-gray-800 px-3 py-2 pr-12 text-sm" placeholder="Your email" required />
+                                        <button type="submit" class="absolute inset-0 left-auto" aria-label="Subscribe">
+                                            <span class="absolute inset-0 right-auto w-px -ml-px my-2 bg-gray-300" aria-hidden="true"></span>
+                                            <svg class="w-3 h-3 fill-current text-blue-600 mx-3 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
+                                                <path d="M11.707 5.293L7 .586 5.586 2l3 3H0v2h8.586l-3 3L7 11.414l4.707-4.707a1 1 0 000-1.414z" fill-rule="nonzero" />
+                                            </svg>
+                                        </button>
+                                    </div>
+                                    <!-- Success message -->
+                                    <!-- <p class="mt-2 text-green-600 text-sm">Thanks for subscribing!</p> -->
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                </div>
+
+                <!-- Bottom area -->
+                <div class="md:flex md:items-center md:justify-between py-4 md:py-8 border-t border-gray-200">
+
+                    <!-- Social links -->
+                    <ul class="flex mb-4 md:order-1 md:ml-4 md:mb-0">
+                        <li>
+                            <a class="flex justify-center items-center text-gray-600 hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out" href="#0" aria-label="Twitter">
+                                <svg class="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="m13.063 9 3.495 4.475L20.601 9h2.454l-5.359 5.931L24 23h-4.938l-3.866-4.893L10.771 23H8.316l5.735-6.342L8 9h5.063Zm-.74 1.347h-1.457l8.875 11.232h1.36l-8.778-11.232Z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="ml-4">
+                            <a class="flex justify-center items-center text-gray-600 hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out" href="#0" aria-label="Github">
+                                <svg class="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M16 8.2c-4.4 0-8 3.6-8 8 0 3.5 2.3 6.5 5.5 7.6.4.1.5-.2.5-.4V22c-2.2.5-2.7-1-2.7-1-.4-.9-.9-1.2-.9-1.2-.7-.5.1-.5.1-.5.8.1 1.2.8 1.2.8.7 1.3 1.9.9 2.3.7.1-.5.3-.9.5-1.1-1.8-.2-3.6-.9-3.6-4 0-.9.3-1.6.8-2.1-.1-.2-.4-1 .1-2.1 0 0 .7-.2 2.2.8.6-.2 1.3-.3 2-.3s1.4.1 2 .3c1.5-1 2.2-.8 2.2-.8.4 1.1.2 1.9.1 2.1.5.6.8 1.3.8 2.1 0 3.1-1.9 3.7-3.7 3.9.3.4.6.9.6 1.6v2.2c0 .2.1.5.6.4 3.2-1.1 5.5-4.1 5.5-7.6-.1-4.4-3.7-8-8.1-8z" />
+                                </svg>
+                            </a>
+                        </li>
+                        <li class="ml-4">
+                            <a class="flex justify-center items-center text-gray-600 hover:text-gray-900 bg-white hover:bg-white-100 rounded-full shadow transition duration-150 ease-in-out" href="#0" aria-label="Facebook">
+                                <svg class="w-8 h-8 fill-current" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+                                    <path d="M14.023 24L14 17h-3v-3h3v-2c0-2.7 1.672-4 4.08-4 1.153 0 2.144.086 2.433.124v2.821h-1.67c-1.31 0-1.563.623-1.563 1.536V14H21l-1 3h-2.72v7h-3.257z" />
+                                </svg>
+                            </a>
+                        </li>
+                    </ul>
+
+                    <!-- Copyrights note -->
+                    <div class="text-sm text-gray-600 mr-4">&copy; Cruip.com. All rights reserved.</div>
+
+                </div>
+
+            </div>
+        </footer>
+
+    </div>
+
+    <script src="./js/vendors/alpinejs.min.js" defer></script>
+    <script src="./js/vendors/aos.js"></script>
+    <script src="./js/main.js"></script>
+
+</body>
+
+</html>
