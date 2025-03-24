@@ -3,7 +3,7 @@
 
 <head>
     <meta charset="utf-8">
-    <title>Tutorials & Guides - Simple Demo</title>
+    <title>Income Inequality Project- Solutions</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <link href="./css/vendors/aos.css" rel="stylesheet">
     <link href="./style.css" rel="stylesheet">
@@ -49,7 +49,7 @@
                         </a>
                     </div>
 
-                    <!-- Desktop navigation -->
+                  <!-- Desktop navigation -->
                   <nav class="hidden md:flex md:grow">
 
                     <!-- Desktop menu links -->
@@ -61,7 +61,7 @@
                         <a class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="issues.html">Issues</a>
                       </li>
                       <li>
-                        <a class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="community.html">Community</a>
+                        <a class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="community.html">Resources</a>
                       </li>
                       <li>
                         <a class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="solutions.html">Solutions</a>
@@ -69,49 +69,7 @@
                       <li>
                         <a class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out" href="about.html">About</a>
                       </li>
-
-                      <!-- Dropdown: Resources -->
-                      <li class="relative" x-data="{ open: false }" @mouseenter="open = true" @mouseleave="open = false">
-                        <a
-                          class="text-gray-600 hover:text-gray-900 px-3 lg:px-5 py-2 flex items-center transition duration-150 ease-in-out"
-                          href="#0"
-                          aria-haspopup="true"
-                          :aria-expanded="open"
-                          @focus="open = true"
-                          @focusout="open = false"
-                          @click.prevent
-                        >
-                          Resources
-                          <svg class="w-3 h-3 fill-current text-gray-400 cursor-pointer ml-1 shrink-0" viewBox="0 0 12 12" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M10.28 4.305L5.989 8.598 1.695 4.305A1 1 0 00.28 5.72l5 5a1 1 0 001.414 0l5-5a1 1 0 10-1.414-1.414z" />
-                          </svg>
-                        </a>
-
-                        <!-- Dropdown menu -->
-                        <ul
-                          class="origin-top-right absolute top-full right-0 w-40 bg-white py-2 ml-4 rounded shadow-lg"
-                          x-show="open"
-                          x-transition:enter="transition ease-out duration-200 transform"
-                          x-transition:enter-start="opacity-0 -translate-y-2"
-                          x-transition:enter-end="opacity-100 translate-y-0"
-                          x-transition:leave="transition ease-out duration-200"
-                          x-transition:leave-start="opacity-100"
-                          x-transition:leave-end="opacity-0"
-                          x-cloak
-                        >
-                          <li>
-                            <a class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight" href="documentation.html">Documentation</a>
-                          </li>
-                          <li>
-                            <a class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight" href="support.html">Support Center</a>
-                          </li>
-                          <li>
-                            <a class="font-medium text-sm text-gray-600 hover:text-gray-900 flex py-2 px-5 leading-tight" href="404.html">404 Page</a>
-                          </li>
-                        </ul>
-                      </li>
                     </ul>
-
                   </nav>
 
                   <!-- Mobile menu -->
@@ -198,454 +156,75 @@
         <!-- Page content -->
         <main class="grow">
 
-            <!-- Tutorials list -->
-            <section class="relative">
-                <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div class="pt-32 pb-12 md:pt-40 md:pb-20">
+          <section>
+            <div class="max-w-6xl mx-auto px-4 sm:px-6">
+              <div class="pt-32 pb-12 md:pt-40 md:pb-20">
 
-                        <!-- Page header -->
-                        <div class="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
-                            <h1 class="h1">Tutorials & guides for using Simple with any project</h1>
-                        </div>
-
-                        <!-- Section tags -->
-                        <div class="border-b border-gray-300 pb-4 mb-12">
-                            <ul class="flex flex-wrap justify-center md:justify-start font-medium -mx-5 -my-1">
-                                <li class="mx-5 my-1">
-                                    <a class="text-blue-600" href="#0">All</a>
-                                </li>
-                                <li class="mx-5 my-1">
-                                    <a class="text-gray-800 hover:underline" href="#0">Tutorials</a>
-                                </li>
-                                <li class="mx-5 my-1">
-                                    <a class="text-gray-800 hover:underline" href="#0">Tips & Tricks</a>
-                                </li>
-                                <li class="mx-5 my-1">
-                                    <a class="text-gray-800 hover:underline" href="#0">Free ebooks</a>
-                                </li>
-                                <li class="mx-5 my-1">
-                                    <a class="text-gray-800 hover:underline" href="#0">Guides</a>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <!-- Articles list -->
-                        <div class="max-w-sm mx-auto md:max-w-none">
-
-                            <!-- Articles container -->
-                            <div class="grid gap-12 md:grid-cols-3 md:gap-x-6 md:gap-y-8 items-start">
-
-                                <!-- 1st article -->
-                                <article class="flex flex-col h-full" data-aos="zoom-y-out">
-                                    <header>
-                                        <a class="block mb-6" href="blog-post.html">
-                                            <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
-                                                <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src="./images/tutorial-01.jpg" width="352" height="198" alt="News 01" />
-                                            </figure>
-                                        </a>
-                                        <div class="mb-3">
-                                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Guides</a>
-                                                </li>
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Intermediate</a>
-                                                </li>
-                                                <li class="m-1">
-                                                    <span class="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">4 min read</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                                            <a class="hover:underline" href="blog-post.html">Making component design decisions in React</a>
-                                        </h3>
-                                    </header>
-                                    <p class="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                    <footer class="text-sm flex items-center mt-4">
-                                        <div class="flex shrink-0 mr-3">
-                                            <a class="relative" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-01.jpg" width="32" height="32" alt="Author 01" />
-                                            </a>
-                                            <a class="relative -ml-2" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-03.jpg" width="32" height="32" alt="Author 03" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <span class="text-gray-600">By </span>
-                                            <a class="font-medium hover:underline" href="#0">Lisa Allison</a> & <a class="font-medium hover:underline" href="#0">Justin Park</a>
-                                        </div>
-                                    </footer>
-                                </article>
-
-                                <!-- 2nd article -->
-                                <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="150">
-                                    <header>
-                                        <a class="block mb-6" href="blog-post.html">
-                                            <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
-                                                <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src="./images/tutorial-02.jpg" width="352" height="198" alt="News 02" />
-                                            </figure>
-                                        </a>
-                                        <div class="mb-3">
-                                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Tutorials</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                                            <a class="hover:underline" href="blog-post.html">How to use structured content for page building</a>
-                                        </h3>
-                                    </header>
-                                    <p class="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                    <footer class="text-sm flex items-center mt-4">
-                                        <div class="flex shrink-0 mr-3">
-                                            <a class="relative" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-02.jpg" width="32" height="32" alt="Author 02" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <span class="text-gray-600">By </span>
-                                            <a class="font-medium hover:underline" href="#0">Knut Mayer</a>
-                                        </div>
-                                    </footer>
-                                </article>
-
-                                <!-- 3rd article -->
-                                <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="300">
-                                    <header>
-                                        <a class="block mb-6" href="blog-post.html">
-                                            <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
-                                                <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src="./images/tutorial-03.jpg" width="352" height="198" alt="News 03" />
-                                            </figure>
-                                        </a>
-                                        <div class="mb-3">
-                                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Guides</a>
-                                                </li>
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Intermediate</a>
-                                                </li>
-                                                <li class="m-1">
-                                                    <span class="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">7 min read</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                                            <a class="hover:underline" href="blog-post.html">Deploy on Netlify, Heroku or your favorite platform</a>
-                                        </h3>
-                                    </header>
-                                    <p class="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                    <footer class="text-sm flex items-center mt-4">
-                                        <div class="flex shrink-0 mr-3">
-                                            <a class="relative" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-01.jpg" width="32" height="32" alt="Author 01" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <span class="text-gray-600">By </span>
-                                            <a class="font-medium hover:underline" href="#0">Lisa Allison</a>
-                                        </div>
-                                    </footer>
-                                </article>
-
-                                <!-- 4th article -->
-                                <article class="flex flex-col h-full" data-aos="zoom-y-out">
-                                    <header>
-                                        <a class="block mb-6" href="blog-post.html">
-                                            <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
-                                                <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src="./images/tutorial-04.jpg" width="352" height="198" alt="News 04" />
-                                            </figure>
-                                        </a>
-                                        <div class="mb-3">
-                                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Free ebooks</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                                            <a class="hover:underline" href="blog-post.html">Create a custom type "Page" with Simple</a>
-                                        </h3>
-                                    </header>
-                                    <p class="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                    <footer class="text-sm flex items-center mt-4">
-                                        <div class="flex shrink-0 mr-3">
-                                            <a class="relative" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-04.jpg" width="32" height="32" alt="Author 04" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <span class="text-gray-600">By </span>
-                                            <a class="font-medium hover:underline" href="#0">Micheal Osman</a>
-                                        </div>
-                                    </footer>
-                                </article>
-
-                                <!-- 5th article -->
-                                <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="150">
-                                    <header>
-                                        <a class="block mb-6" href="blog-post.html">
-                                            <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
-                                                <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src="./images/tutorial-05.jpg" width="352" height="198" alt="News 05" />
-                                            </figure>
-                                        </a>
-                                        <div class="mb-3">
-                                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Tips & Tricks</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                                            <a class="hover:underline" href="blog-post.html">Getting started with content modelling</a>
-                                        </h3>
-                                    </header>
-                                    <p class="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                    <footer class="text-sm flex items-center mt-4">
-                                        <div class="flex shrink-0 mr-3">
-                                            <a class="relative" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-03.jpg" width="32" height="32" alt="Author 03" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <span class="text-gray-600">By </span>
-                                            <a class="font-medium hover:underline" href="#0">Justin Park</a>
-                                        </div>
-                                    </footer>
-                                </article>
-
-                                <!-- 6th article -->
-                                <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="300">
-                                    <header>
-                                        <a class="block mb-6" href="blog-post.html">
-                                            <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
-                                                <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src="./images/tutorial-06.jpg" width="352" height="198" alt="News 06" />
-                                            </figure>
-                                        </a>
-                                        <div class="mb-3">
-                                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Guides</a>
-                                                </li>
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Beginner</a>
-                                                </li>
-                                                <li class="m-1">
-                                                    <span class="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">6 min read</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                                            <a class="hover:underline" href="blog-post.html">How to add custom icons to your Simple project</a>
-                                        </h3>
-                                    </header>
-                                    <p class="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                    <footer class="text-sm flex items-center mt-4">
-                                        <div class="flex shrink-0 mr-3">
-                                            <a class="relative" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-05.jpg" width="32" height="32" alt="Author 05" />
-                                            </a>
-                                            <a class="relative -ml-2" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-01.jpg" width="32" height="32" alt="Author 01" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <span class="text-gray-600">By </span>
-                                            <a class="font-medium hover:underline" href="#0">Angela Fiorelli</a> & <a class="font-medium hover:underline" href="#0">Lisa Allison</a>
-                                        </div>
-                                    </footer>
-                                </article>
-
-                                <!-- 7th article -->
-                                <article class="flex flex-col h-full" data-aos="zoom-y-out">
-                                    <header>
-                                        <a class="block mb-6" href="blog-post.html">
-                                            <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
-                                                <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src="./images/tutorial-07.jpg" width="352" height="198" alt="News 07" />
-                                            </figure>
-                                        </a>
-                                        <div class="mb-3">
-                                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Tips & Tricks</a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                                            <a class="hover:underline" href="blog-post.html">Deploying a Vue.js web application with Simple</a>
-                                        </h3>
-                                    </header>
-                                    <p class="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                    <footer class="text-sm flex items-center mt-4">
-                                        <div class="flex shrink-0 mr-3">
-                                            <a class="relative" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-06.jpg" width="32" height="32" alt="Author 06" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <span class="text-gray-600">By </span>
-                                            <a class="font-medium hover:underline" href="#0">Cory McCall</a>
-                                        </div>
-                                    </footer>
-                                </article>
-
-                                <!-- 8th article -->
-                                <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="150">
-                                    <header>
-                                        <a class="block mb-6" href="blog-post.html">
-                                            <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
-                                                <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src="./images/tutorial-08.jpg" width="352" height="198" alt="News 08" />
-                                            </figure>
-                                        </a>
-                                        <div class="mb-3">
-                                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Guides</a>
-                                                </li>
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Advanced</a>
-                                                </li>
-                                                <li class="m-1">
-                                                    <span class="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">12 min read</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                                            <a class="hover:underline" href="blog-post.html">Live preview changes to React websites with Simple</a>
-                                        </h3>
-                                    </header>
-                                    <p class="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                    <footer class="text-sm flex items-center mt-4">
-                                        <div class="flex shrink-0 mr-3">
-                                            <a class="relative" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-04.jpg" width="32" height="32" alt="Author 04" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <span class="text-gray-600">By </span>
-                                            <a class="font-medium hover:underline" href="#0">Micheal Osman</a>
-                                        </div>
-                                    </footer>
-                                </article>
-
-                                <!-- 9th article -->
-                                <article class="flex flex-col h-full" data-aos="zoom-y-out" data-aos-delay="300">
-                                    <header>
-                                        <a class="block mb-6" href="blog-post.html">
-                                            <figure class="relative h-0 pb-9/16 overflow-hidden translate-z-0 rounded">
-                                                <img class="absolute inset-0 w-full h-full object-cover transform scale-105 hover:-translate-y-1 transition duration-700 ease-out" src="./images/tutorial-09.jpg" width="352" height="198" alt="News 09" />
-                                            </figure>
-                                        </a>
-                                        <div class="mb-3">
-                                            <ul class="flex flex-wrap text-xs font-medium -m-1">
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-100 py-1 px-3 rounded-full bg-blue-500 hover:bg-blue-600 transition duration-150 ease-in-out" href="#0">Guides</a>
-                                                </li>
-                                                <li class="m-1">
-                                                    <a class="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-blue-100 hover:bg-blue-200 transition duration-150 ease-in-out" href="#0">Intermediate</a>
-                                                </li>
-                                                <li class="m-1">
-                                                    <span class="inline-flex text-center text-gray-800 py-1 px-3 rounded-full bg-white shadow-sm">9 min read</span>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                        <h3 class="text-xl font-bold leading-snug tracking-tight mb-2">
-                                            <a class="hover:underline" href="blog-post.html">Create a custom app and deploy It with Simple</a>
-                                        </h3>
-                                    </header>
-                                    <p class="text-gray-600 grow">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.</p>
-                                    <footer class="text-sm flex items-center mt-4">
-                                        <div class="flex shrink-0 mr-3">
-                                            <a class="relative" href="#0">
-                                                <span class="absolute inset-0 -m-px" aria-hidden="true"><span class="absolute inset-0 -m-px bg-white rounded-full"></span></span>
-                                                <img class="relative rounded-full" src="./images/news-author-01.jpg" width="32" height="32" alt="Author 01" />
-                                            </a>
-                                        </div>
-                                        <div>
-                                            <span class="text-gray-600">By </span>
-                                            <a class="font-medium hover:underline" href="#0">Lisa Allison</a>
-                                        </div>
-                                    </footer>
-                                </article>
-                            </div>
-
-                        </div>
-
-                    </div>
+                <!-- Page header -->
+                <div class="max-w-3xl pb-12 md:pb-20 text-center md:text-left">
+                  <h1 class="h1 mb-4">Solutions </h1>
                 </div>
-            </section>
 
-            <!-- Newsletter -->
-            <section>
-                <div class="max-w-6xl mx-auto px-4 sm:px-6">
-                    <div class="pb-12 md:pb-20">
+                <!-- Main content -->
+                <div class="md:flex md:justify-between">
 
-                        <!-- CTA box -->
-                        <div class="relative bg-gray-900 rounded py-10 px-8 md:py-16 md:px-12 shadow-2xl overflow-hidden" data-aos="zoom-y-out">
+                  <!-- Articles container -->
+                  <div class="md:grow -mt-4">
 
-                            <!-- Background illustration -->
-                            <div class="absolute right-0 bottom-0 pointer-events-none hidden lg:block" aria-hidden="true">
-                                <svg width="428" height="328" xmlns="http://www.w3.org/2000/svg">
-                                    <defs>
-                                        <radialGradient cx="35.542%" cy="34.553%" fx="35.542%" fy="34.553%" r="96.031%" id="ni-a">
-                                            <stop stop-color="#DFDFDF" offset="0%" />
-                                            <stop stop-color="#4C4C4C" offset="44.317%" />
-                                            <stop stop-color="#333" offset="100%" />
-                                        </radialGradient>
-                                    </defs>
-                                    <g fill="none" fill-rule="evenodd">
-                                        <g fill="#FFF">
-                                            <ellipse fill-opacity=".04" cx="185" cy="15.576" rx="16" ry="15.576" />
-                                            <ellipse fill-opacity=".24" cx="100" cy="68.402" rx="24" ry="23.364" />
-                                            <ellipse fill-opacity=".12" cx="29" cy="251.231" rx="29" ry="28.231" />
-                                            <ellipse fill-opacity=".64" cx="29" cy="251.231" rx="8" ry="7.788" />
-                                            <ellipse fill-opacity=".12" cx="342" cy="31.303" rx="8" ry="7.788" />
-                                            <ellipse fill-opacity=".48" cx="62" cy="126.811" rx="2" ry="1.947" />
-                                            <ellipse fill-opacity=".12" cx="78" cy="7.072" rx="2" ry="1.947" />
-                                            <ellipse fill-opacity=".64" cx="185" cy="15.576" rx="6" ry="5.841" />
-                                        </g>
-                                        <circle fill="url(#ni-a)" cx="276" cy="237" r="200" />
-                                    </g>
-                                </svg>
-                            </div>
+                    <!-- 1st article -->
+                    <article class="flex items-center py-4 border-b border-gray-200">
+                      <div>
+                        <header class="mb-4">
+                          <h2 class="h4">
+                            <a class="hover:underline">Macro-Level Solutions</a>
+                          </h2>
+                          <p>(Policy Changes & Government Interventions)</p>
+                        </header>
+                        <div class="max-w-4xl mx-auto px-4 sm:px-6">
+                        <ul class="list-disc pl-5 text-lg text-gray-600" data-aos="zoom-y-out">
+                          <li><strong>Higher Minimum Wage:</strong> Ensuring a livable wage for all workers. </li>
+                          <li><strong>Universal Basic Income (UBI):</strong> Providing a guaranteed income to help reduce poverty. </li>
+                          <li><strong>Affordable Healthcare:</strong> Ensuring equal access to medical services regardless of income.</li>
+                          <li><strong>Progressive Taxation:</strong> Taxing the wealthy at higher rates to fund social programs.</li>
+                        </ul>
+                      </div>
+                      </div>
+                    </article>
+                  </div>
 
-                            <div class="relative flex flex-col lg:flex-row justify-between items-center">
+                  <!-- Sidebar -->
+                  <aside class="relative mt-12 md:mt-0 md:w-64 md:ml-12 lg:ml-20 md:shrink-0">
 
-                                <!-- CTA content -->
-                                <div class="text-center lg:text-left lg:max-w-xl">
-                                    <h3 class="h3 text-white mb-2">Want more tutorials & guides?</h3>
-                                    <p class="text-gray-300 text-lg mb-6">Lorem ipsum dolor sit amet consectetur adipisicing elit nemo expedita voluptas culpa sapiente.</p>
-
-                                    <!-- CTA form -->
-                                    <form class="w-full lg:w-auto">
-                                        <div class="flex flex-col sm:flex-row justify-center max-w-xs mx-auto sm:max-w-md lg:mx-0">
-                                            <input type="email" class="form-input w-full appearance-none bg-gray-800 border border-gray-700 focus:border-gray-600 rounded-sm px-4 py-3 mb-2 sm:mb-0 sm:mr-2 text-white placeholder-gray-500" placeholder="Your email…" aria-label="Your email…" />
-                                            <a class="btn text-white bg-blue-600 hover:bg-blue-700 shadow" href="#0">Subscribe</a>
-                                        </div>
-                                        <!-- Success message -->
-                                        <!-- <p class="text-sm text-gray-400 mt-3">Thanks for subscribing!</p> -->
-                                        <p class="text-sm text-gray-400 mt-3">No spam. You can unsubscribe at any time.</p>
-                                    </form>
-                                </div>
-
-                            </div>
-
-                        </div>
-
+                    <!-- Popular posts -->
+                    <div class="mb-4">
+                      <h2 class="h4">Meso-Level Solutions</h2>
+                      <p>(Community-Based Changes)</p>
                     </div>
+                    <ul class="list-disc pl-5 text-lg text-gray-600" data-aos="zoom-y-out">
+                      <li><strong>Stronger local education funding:</strong> Ensuring equal access to quality teachers and resources. </li>
+                      <li><strong>Community job programs:</strong> Providing employment opportunities for marginalized groups. </li>
+                      <li><strong>School-Community Connection:</strong> Support in Tutoring and Psychologist Costs </li>
+                      <li><strong>Stable wages:</strong> increase minimum wages in line with the state's living standards to ensure a stable life for workers </li>
+                    </ul>
+                  </aside>
+                  <aside class="relative mt-12 md:mt-0 md:w-64 md:ml-12 lg:ml-20 md:shrink-0">
+
+                    <!-- Popular posts -->
+                    <div class="mb-4">
+                      <p class="text-xl font-bold">Macro-Level Solutions</p>
+                      <p>(Policy Changes & Government Interventions)</p>
+                    </div>
+                    <ul class="list-disc pl-5 text-gray-600" data-aos="zoom-y-out">
+                      <li><strong>Financial literacy programs:</strong> Educating individuals on budgeting, saving, and investing can help break cycles of poverty. </li>
+                      <li><strong>Mentorship & Skill Development:</strong> Encouraging job training and career-building opportunities. </li>
+                      <li><strong>Expand and support nursing homes and childcare:</strong> Women are busy with care work, cheap care costs support women in studying, spending more time on their careers without having to worry about housework, childcare, etc.</li>
+                    </ul>
+                  </aside>
                 </div>
-            </section>
+              </div>
+            </div>
+          </section>
+
 
         </main>
 
